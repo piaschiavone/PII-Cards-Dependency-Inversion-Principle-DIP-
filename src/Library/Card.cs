@@ -9,7 +9,7 @@ namespace Ucu.Poo.Cards
     /// <summary>
     /// Representa un naipe de póker.
     /// </summary>
-    public class Card
+    public class Card : ICardContent
     {
         /// <summary>
         /// Inicializa una nueva instancia de la clase <see cref="Card"/>.
@@ -38,7 +38,8 @@ namespace Ucu.Poo.Cards
         /// <returns>El texto del naipe.</returns>
         public string GetTextToPrint()
         {
-            return $"{this.Rank} of {this.Suit}";
+            ICardContent contentProvider = new PrettyCardContent(this);
+            return contentProvider.GetTextToPrint();
         }
     }
 }

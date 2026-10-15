@@ -31,7 +31,7 @@ namespace Ucu.Poo.Exercise
         /// <param name="printer">La impresora a usar.</param>
         private static void Print(Card card, IPrinter printer)
         {
-            printer.PrintCard(card);
+            printer.PrintCard(card); 
         }
     }
 }
